@@ -17,4 +17,4 @@ $WebNsgName = "nsg-web"
 $WebPublicIpName = "pip-web-01"
 
 $VmSize = "Standard_B1s"
-$AdminUsername = "bayoojo1_yahoo.com#EXT#@bayoojo1yahoo.onmicrosoft.com"
+$AdminUsername = "bayoojo1"
