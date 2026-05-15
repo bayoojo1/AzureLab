@@ -1,8 +1,8 @@
-Write-Host "Deploying web VM..."
+Write-Host "Deploying app VM..."
 
 $existingVm = Get-AzVM `
     -ResourceGroupName $ResourceGroup `
-    -Name $WebVmName `
+    -Name $AppVmName `
     -ErrorAction SilentlyContinue
 
 if (-not $existingVm) {
@@ -11,11 +11,11 @@ if (-not $existingVm) {
     New-AzVM `
         -ResourceGroupName $ResourceGroup `
         -Location $Location `
-        -Name $WebVmName `
+        -Name $AppVmName `
         -VirtualNetworkName $VnetName `
-        -SubnetName $WebSubnetName `
-        -SecurityGroupName $WebNsgName `
-        -PublicIpAddressName $WebPublicIpName `
+        -SubnetName $AppSubnetName `
+        -SecurityGroupName $AppNsgName `
+        -PublicIpAddressName $AppPublicIpName `
         -Credential $cred `
         -Size $VmSize `
         -Image "Win2022Datacenter"
