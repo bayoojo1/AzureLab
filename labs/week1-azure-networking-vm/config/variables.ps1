@@ -16,5 +16,5 @@ $AppVmName = "vm-app-01"
 $WebNsgName = "nsg-web"
 $WebPublicIpName = "pip-web-01"
 
-$VmSize = "Standard_B1s"
+$VmSize = "Standard_B2ats_v2"
 $AdminUsername = "bayoojo1"
