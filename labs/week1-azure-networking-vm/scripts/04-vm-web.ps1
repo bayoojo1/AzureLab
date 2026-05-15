@@ -18,7 +18,7 @@ if (-not $existingVm) {
         -PublicIpAddressName $WebPublicIpName `
         -Credential $cred `
         -Size $VmSize `
-        -Image "Win2022Datacenter"
+        -Image "Ubuntu2204"
 }
 else {
     Write-Host "Web VM already exists."

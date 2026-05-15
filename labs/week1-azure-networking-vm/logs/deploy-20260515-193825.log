@@ -1,0 +1,285 @@
+**********************
+PowerShell transcript start
+Start time: 20260515193825
+Username: DESKTOP-EUTV28M\User
+RunAs User: DESKTOP-EUTV28M\User
+Configuration Name: 
+Machine: DESKTOP-EUTV28M (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\User\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.4.0' -BundledModulesPath 'c:\Users\User\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.4.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\User\AppData\Roaming\Code\logs\20260515T112459\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\User\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-6744-891078.json' -FeatureFlags @() 
+Process ID: 13172
+PSVersion: 7.6.1
+PSEdition: Core
+GitCommitId: 7.6.1
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is ./logs/deploy-20260515-193825.log
+Creating resource group...
+Resource group already exists.
+Creating virtual network and subnets...
+
+Creating NSG and security rules...
+ResourceGroupName Name       Location ProvisioningState EnableDdosProtection DefaultPublicNatGateway
+----------------- ----       -------- ----------------- -------------------- -----------------------
+rg-week1-lab      vnet-week1 uksouth  Succeeded         False
+
+FlushConnection          : False
+SecurityRules            : {Allow-HTTP, Allow-RDP}
+DefaultSecurityRules     : {AllowVnetInBound, AllowAzureLoadBalancerInBound, DenyAllInBound, AllowVnetOutBound…}
+NetworkInterfaces        : {}
+Subnets                  : {}
+ProvisioningState        : Succeeded
+FlushConnectionText      : false
+SecurityRulesText        : [
+                             {
+                               "Name": "Allow-HTTP",
+                               "Etag": "W/\"8166102f-df8d-422b-86a2-1dd6af01bf23\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/prov
+                           iders/Microsoft.Network/networkSecurityGroups/nsg-web/securityRules/Allow-HTTP",
+                               "Description": "Allow HTTP",
+                               "Protocol": "Tcp",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "80"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "*"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "*"
+                               ],
+                               "Access": "Allow",
+                               "Priority": 100,
+                               "Direction": "Inbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             },
+                             {
+                               "Name": "Allow-RDP",
+                               "Etag": "W/\"8166102f-df8d-422b-86a2-1dd6af01bf23\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/prov
+                           iders/Microsoft.Network/networkSecurityGroups/nsg-web/securityRules/Allow-RDP",
+                               "Description": "Allow RDP",
+                               "Protocol": "Tcp",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "3389"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "*"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "*"
+                               ],
+                               "Access": "Allow",
+                               "Priority": 110,
+                               "Direction": "Inbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             }
+                           ]
+DefaultSecurityRulesText : [
+                             {
+                               "Name": "AllowVnetInBound",
+                               "Etag": "W/\"8166102f-df8d-422b-86a2-1dd6af01bf23\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/prov
+                           iders/Microsoft.Network/networkSecurityGroups/nsg-web/defaultSecurityRules/AllowVnetInBound",
+                               "Description": "Allow inbound traffic from all VMs in VNET",
+                               "Protocol": "*",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "*"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "VirtualNetwork"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "VirtualNetwork"
+                               ],
+                               "Access": "Allow",
+                               "Priority": 65000,
+                               "Direction": "Inbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             },
+                             {
+                               "Name": "AllowAzureLoadBalancerInBound",
+                               "Etag": "W/\"8166102f-df8d-422b-86a2-1dd6af01bf23\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/prov
+                           iders/Microsoft.Network/networkSecurityGroups/nsg-web/defaultSecurityRules/AllowAzureLoadBalanc
+                           erInBound",
+                               "Description": "Allow inbound traffic from azure load balancer",
+                               "Protocol": "*",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "*"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "AzureLoadBalancer"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "*"
+                               ],
+                               "Access": "Allow",
+                               "Priority": 65001,
+                               "Direction": "Inbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             },
+                             {
+                               "Name": "DenyAllInBound",
+                               "Etag": "W/\"8166102f-df8d-422b-86a2-1dd6af01bf23\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/prov
+                           iders/Microsoft.Network/networkSecurityGroups/nsg-web/defaultSecurityRules/DenyAllInBound",
+                               "Description": "Deny all inbound traffic",
+                               "Protocol": "*",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "*"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "*"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "*"
+                               ],
+                               "Access": "Deny",
+                               "Priority": 65500,
+                               "Direction": "Inbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             },
+                             {
+                               "Name": "AllowVnetOutBound",
+                               "Etag": "W/\"8166102f-df8d-422b-86a2-1dd6af01bf23\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/prov
+                           iders/Microsoft.Network/networkSecurityGroups/nsg-web/defaultSecurityRules/AllowVnetOutBound",
+                               "Description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                               "Protocol": "*",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "*"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "VirtualNetwork"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "VirtualNetwork"
+                               ],
+                               "Access": "Allow",
+                               "Priority": 65000,
+                               "Direction": "Outbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             },
+                             {
+                               "Name": "AllowInternetOutBound",
+                               "Etag": "W/\"8166102f-df8d-422b-86a2-1dd6af01bf23\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/prov
+                           iders/Microsoft.Network/networkSecurityGroups/nsg-web/defaultSecurityRules/AllowInternetOutBoun
+                           d",
+                               "Description": "Allow outbound traffic from all VMs to Internet",
+                               "Protocol": "*",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "*"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "*"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "Internet"
+                               ],
+                               "Access": "Allow",
+                               "Priority": 65001,
+                               "Direction": "Outbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             },
+                             {
+                               "Name": "DenyAllOutBound",
+                               "Etag": "W/\"8166102f-df8d-422b-86a2-1dd6af01bf23\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/prov
+                           iders/Microsoft.Network/networkSecurityGroups/nsg-web/defaultSecurityRules/DenyAllOutBound",
+                               "Description": "Deny all outbound traffic",
+                               "Protocol": "*",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "*"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "*"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "*"
+                               ],
+                               "Access": "Deny",
+                               "Priority": 65500,
+                               "Direction": "Outbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             }
+                           ]
+NetworkInterfacesText    : []
+SubnetsText              : []
+ResourceGroupName        : rg-week1-lab
+Location                 : uksouth
+ResourceGuid             : 8a9ec381-b9cd-4266-ac39-3892f2d2a7f8
+Type                     : Microsoft.Network/networkSecurityGroups
+Tag                      : 
+TagsTable                : 
+Name                     : nsg-web
+Etag                     : W/"8166102f-df8d-422b-86a2-1dd6af01bf23"
+Id                       : /subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/providers/Micro
+                           soft.Network/networkSecurityGroups/nsg-web
+
+rg-week1-lab      vnet-week1 uksouth  Succeeded         False
+rg-week1-lab      vnet-week1 uksouth  Succeeded         False
+Deploying web VM...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '01/11/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Can't find the image 'Win2022Datacenter'."
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Can't find the image 'Win2022Datacenter'."
+>> TerminatingError(deploy.ps1): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Can't find the image 'Win2022Datacenter'."
+**********************
+PowerShell transcript end
+End time: 20260515193949
+**********************
