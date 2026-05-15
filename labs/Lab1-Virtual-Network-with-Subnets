@@ -1,0 +1,26 @@
+Step 1: Create VNet
+
+$vnet = New-AzVirtualNetwork `
+  -ResourceGroupName "rg-week1-lab" `
+  -Location "uksouth" `
+  -Name "vnet-week1" `
+  -AddressPrefix "10.0.0.0/16"
+
+
+Step 2: Create Subnet
+
+Add-AzVirtualNetworkSubnetConfig `
+  -Name "web-subnet" `
+  -VirtualNetwork $vnet `
+  -AddressPrefix "10.0.1.0/24"
+
+Add-AzVirtualNetworkSubnetConfig `
+  -Name "app-subnet" `
+  -VirtualNetwork $vnet `
+  -AddressPrefix "10.0.2.0/24"
+
+
+Step 3: Apply Changes
+
+$vnet | Set-AzVirtualNetwork
+
