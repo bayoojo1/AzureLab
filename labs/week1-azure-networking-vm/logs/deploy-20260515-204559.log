@@ -1,0 +1,669 @@
+**********************
+PowerShell transcript start
+Start time: 20260515204559
+Username: DESKTOP-EUTV28M\User
+RunAs User: DESKTOP-EUTV28M\User
+Configuration Name: 
+Machine: DESKTOP-EUTV28M (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\User\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.4.0' -BundledModulesPath 'c:\Users\User\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.4.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\User\AppData\Roaming\Code\logs\20260515T112459\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\User\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-6744-891078.json' -FeatureFlags @() 
+Process ID: 13172
+PSVersion: 7.6.1
+PSEdition: Core
+GitCommitId: 7.6.1
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is ./logs/deploy-20260515-204559.log
+Creating resource group...
+
+ResourceGroupName : rg-week1-lab
+Location          : ukwest
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab
+
+Creating virtual network and subnets...
+
+AddressSpace                : Microsoft.Azure.Commands.Network.Models.PSAddressSpace
+DhcpOptions                 : Microsoft.Azure.Commands.Network.Models.PSDhcpOptions
+FlowTimeoutInMinutes        : 
+Subnets                     : {web-subnet, app-subnet}
+BgpCommunities              : 
+Encryption                  : 
+VirtualNetworkPeerings      : {}
+ProvisioningState           : Succeeded
+EnableDdosProtection        : False
+DdosProtectionPlan          : 
+IpAllocations               : {}
+ExtendedLocation            : 
+PrivateEndpointVNetPolicies : Disabled
+DefaultPublicNatGateway     : 
+AddressSpaceText            : {
+                                "AddressPrefixes": [
+                                  "10.0.0.0/16"
+                                ],
+                                "IpamPoolPrefixAllocations": []
+                              }
+DhcpOptionsText             : {
+                                "DnsServers": []
+                              }
+FlowTimeoutInMinutesText    : null
+SubnetsText                 : [
+                                {
+                                  "Delegations": [],
+                                  "Name": "web-subnet",
+                                  "Etag": "W/\"dd58c228-de03-40ca-9361-f9e6bf60c133\"",
+                                  "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg
+                              -week1-lab/providers/Microsoft.Network/virtualNetworks/vnet-week1/subnets/web-su
+                              bnet",
+                                  "AddressPrefix": [
+                                    "10.0.1.0/24"
+                                  ],
+                                  "IpamPoolPrefixAllocations": [],
+                                  "IpConfigurations": [],
+                                  "ServiceAssociationLinks": [],
+                                  "ResourceNavigationLinks": [],
+                                  "ServiceEndpoints": [],
+                                  "ServiceEndpointPolicies": [],
+                                  "PrivateEndpoints": [],
+                                  "ProvisioningState": "Succeeded",
+                                  "PrivateEndpointNetworkPolicies": "Disabled",
+                                  "PrivateLinkServiceNetworkPolicies": "Enabled",
+                                  "IpAllocations": []
+                                },
+                                {
+                                  "Delegations": [],
+                                  "Name": "app-subnet",
+                                  "Etag": "W/\"dd58c228-de03-40ca-9361-f9e6bf60c133\"",
+                                  "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg
+                              -week1-lab/providers/Microsoft.Network/virtualNetworks/vnet-week1/subnets/app-su
+                              bnet",
+                                  "AddressPrefix": [
+                                    "10.0.2.0/24"
+                                  ],
+                                  "IpamPoolPrefixAllocations": [],
+                                  "IpConfigurations": [],
+                                  "ServiceAssociationLinks": [],
+                                  "ResourceNavigationLinks": [],
+                                  "ServiceEndpoints": [],
+                                  "ServiceEndpointPolicies": [],
+                                  "PrivateEndpoints": [],
+                                  "ProvisioningState": "Succeeded",
+                                  "PrivateEndpointNetworkPolicies": "Disabled",
+                                  "PrivateLinkServiceNetworkPolicies": "Enabled",
+                                  "IpAllocations": []
+                                }
+                              ]
+BgpCommunitiesText          : null
+EncryptionText              : null
+VirtualNetworkPeeringsText  : []
+EnableDdosProtectionText    : false
+DdosProtectionPlanText      : null
+IpAllocationsText           : []
+ExtendedLocationText        : null
+DefaultPublicNatGatewayText : 
+ResourceGroupName           : rg-week1-lab
+Location                    : ukwest
+ResourceGuid                : 78ed6c86-2aeb-4301-8b51-58e64ace95c8
+Type                        : Microsoft.Network/virtualNetworks
+Tag                         : 
+TagsTable                   : 
+Name                        : vnet-week1
+Etag                        : W/"dd58c228-de03-40ca-9361-f9e6bf60c133"
+Id                          : /subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/
+                              providers/Microsoft.Network/virtualNetworks/vnet-week1
+
+Creating NSG and security rules...
+
+FlushConnection          : False
+SecurityRules            : {Allow-HTTP, Allow-RDP}
+DefaultSecurityRules     : {AllowVnetInBound, AllowAzureLoadBalancerInBound, DenyAllInBound,
+                           AllowVnetOutBound…}
+NetworkInterfaces        : {}
+Subnets                  : {}
+ProvisioningState        : Succeeded
+FlushConnectionText      : false
+SecurityRulesText        : [
+                             {
+                               "Name": "Allow-HTTP",
+                               "Etag": "W/\"8776a2be-cada-4a31-a9c5-e49a3160b445\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-we
+                           ek1-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-web/securityRules/All
+                           ow-HTTP",
+                               "Description": "Allow HTTP",
+                               "Protocol": "Tcp",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "80"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "*"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "*"
+                               ],
+                               "Access": "Allow",
+                               "Priority": 100,
+                               "Direction": "Inbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             },
+                             {
+                               "Name": "Allow-RDP",
+                               "Etag": "W/\"8776a2be-cada-4a31-a9c5-e49a3160b445\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-we
+                           ek1-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-web/securityRules/All
+                           ow-RDP",
+                               "Description": "Allow RDP",
+                               "Protocol": "Tcp",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "3389"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "*"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "*"
+                               ],
+                               "Access": "Allow",
+                               "Priority": 110,
+                               "Direction": "Inbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             }
+                           ]
+DefaultSecurityRulesText : [
+                             {
+                               "Name": "AllowVnetInBound",
+                               "Etag": "W/\"8776a2be-cada-4a31-a9c5-e49a3160b445\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-we
+                           ek1-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-web/defaultSecurityRu
+                           les/AllowVnetInBound",
+                               "Description": "Allow inbound traffic from all VMs in VNET",
+                               "Protocol": "*",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "*"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "VirtualNetwork"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "VirtualNetwork"
+                               ],
+                               "Access": "Allow",
+                               "Priority": 65000,
+                               "Direction": "Inbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             },
+                             {
+                               "Name": "AllowAzureLoadBalancerInBound",
+                               "Etag": "W/\"8776a2be-cada-4a31-a9c5-e49a3160b445\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-we
+                           ek1-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-web/defaultSecurityRu
+                           les/AllowAzureLoadBalancerInBound",
+                               "Description": "Allow inbound traffic from azure load balancer",
+                               "Protocol": "*",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "*"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "AzureLoadBalancer"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "*"
+                               ],
+                               "Access": "Allow",
+                               "Priority": 65001,
+                               "Direction": "Inbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             },
+                             {
+                               "Name": "DenyAllInBound",
+                               "Etag": "W/\"8776a2be-cada-4a31-a9c5-e49a3160b445\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-we
+                           ek1-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-web/defaultSecurityRu
+                           les/DenyAllInBound",
+                               "Description": "Deny all inbound traffic",
+                               "Protocol": "*",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "*"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "*"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "*"
+                               ],
+                               "Access": "Deny",
+                               "Priority": 65500,
+                               "Direction": "Inbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             },
+                             {
+                               "Name": "AllowVnetOutBound",
+                               "Etag": "W/\"8776a2be-cada-4a31-a9c5-e49a3160b445\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-we
+                           ek1-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-web/defaultSecurityRu
+                           les/AllowVnetOutBound",
+                               "Description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                               "Protocol": "*",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "*"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "VirtualNetwork"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "VirtualNetwork"
+                               ],
+                               "Access": "Allow",
+                               "Priority": 65000,
+                               "Direction": "Outbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             },
+                             {
+                               "Name": "AllowInternetOutBound",
+                               "Etag": "W/\"8776a2be-cada-4a31-a9c5-e49a3160b445\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-we
+                           ek1-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-web/defaultSecurityRu
+                           les/AllowInternetOutBound",
+                               "Description": "Allow outbound traffic from all VMs to Internet",
+                               "Protocol": "*",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "*"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "*"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "Internet"
+                               ],
+                               "Access": "Allow",
+                               "Priority": 65001,
+                               "Direction": "Outbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             },
+                             {
+                               "Name": "DenyAllOutBound",
+                               "Etag": "W/\"8776a2be-cada-4a31-a9c5-e49a3160b445\"",
+                               "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-we
+                           ek1-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-web/defaultSecurityRu
+                           les/DenyAllOutBound",
+                               "Description": "Deny all outbound traffic",
+                               "Protocol": "*",
+                               "SourcePortRange": [
+                                 "*"
+                               ],
+                               "DestinationPortRange": [
+                                 "*"
+                               ],
+                               "SourceAddressPrefix": [
+                                 "*"
+                               ],
+                               "DestinationAddressPrefix": [
+                                 "*"
+                               ],
+                               "Access": "Deny",
+                               "Priority": 65500,
+                               "Direction": "Outbound",
+                               "ProvisioningState": "Succeeded",
+                               "SourceApplicationSecurityGroups": [],
+                               "DestinationApplicationSecurityGroups": []
+                             }
+                           ]
+NetworkInterfacesText    : []
+SubnetsText              : []
+ResourceGroupName        : rg-week1-lab
+Location                 : ukwest
+ResourceGuid             : c89eea64-a4c8-493c-a841-118a9b3d9269
+Type                     : Microsoft.Network/networkSecurityGroups
+Tag                      : 
+TagsTable                : 
+Name                     : nsg-web
+Etag                     : W/"8776a2be-cada-4a31-a9c5-e49a3160b445"
+Id                       : /subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/pro
+                           viders/Microsoft.Network/networkSecurityGroups/nsg-web
+
+
+AddressSpace                : Microsoft.Azure.Commands.Network.Models.PSAddressSpace
+DhcpOptions                 : Microsoft.Azure.Commands.Network.Models.PSDhcpOptions
+FlowTimeoutInMinutes        : 
+Subnets                     : {web-subnet, app-subnet}
+BgpCommunities              : 
+Encryption                  : 
+VirtualNetworkPeerings      : {}
+ProvisioningState           : Succeeded
+EnableDdosProtection        : False
+DdosProtectionPlan          : 
+IpAllocations               : {}
+ExtendedLocation            : 
+PrivateEndpointVNetPolicies : Disabled
+DefaultPublicNatGateway     : 
+AddressSpaceText            : {
+                                "AddressPrefixes": [
+                                  "10.0.0.0/16"
+                                ],
+                                "IpamPoolPrefixAllocations": []
+                              }
+DhcpOptionsText             : {
+                                "DnsServers": []
+                              }
+FlowTimeoutInMinutesText    : null
+SubnetsText                 : [
+                                {
+                                  "Name": "web-subnet",
+                                  "Etag": "W/\"dd58c228-de03-40ca-9361-f9e6bf60c133\"",
+                                  "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg
+                              -week1-lab/providers/Microsoft.Network/virtualNetworks/vnet-week1/subnets/web-su
+                              bnet",
+                                  "AddressPrefix": [
+                                    "10.0.1.0/24"
+                                  ],
+                                  "IpamPoolPrefixAllocations": [],
+                                  "IpConfigurations": [],
+                                  "ServiceAssociationLinks": [],
+                                  "ResourceNavigationLinks": [],
+                                  "NetworkSecurityGroup": {
+                                    "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/
+                              rg-week1-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-web"
+                                  },
+                                  "PrivateEndpoints": [],
+                                  "ProvisioningState": "Succeeded",
+                                  "PrivateEndpointNetworkPolicies": "Disabled",
+                                  "PrivateLinkServiceNetworkPolicies": "Enabled",
+                                  "IpAllocations": []
+                                },
+                                {
+                                  "Delegations": [],
+                                  "Name": "app-subnet",
+                                  "Etag": "W/\"dd58c228-de03-40ca-9361-f9e6bf60c133\"",
+                                  "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg
+                              -week1-lab/providers/Microsoft.Network/virtualNetworks/vnet-week1/subnets/app-su
+                              bnet",
+                                  "AddressPrefix": [
+                                    "10.0.2.0/24"
+                                  ],
+                                  "IpamPoolPrefixAllocations": [],
+                                  "IpConfigurations": [],
+                                  "ServiceAssociationLinks": [],
+                                  "ResourceNavigationLinks": [],
+                                  "ServiceEndpoints": [],
+                                  "ServiceEndpointPolicies": [],
+                                  "PrivateEndpoints": [],
+                                  "ProvisioningState": "Succeeded",
+                                  "PrivateEndpointNetworkPolicies": "Disabled",
+                                  "PrivateLinkServiceNetworkPolicies": "Enabled",
+                                  "IpAllocations": []
+                                }
+                              ]
+BgpCommunitiesText          : null
+EncryptionText              : null
+VirtualNetworkPeeringsText  : []
+EnableDdosProtectionText    : false
+DdosProtectionPlanText      : null
+IpAllocationsText           : []
+ExtendedLocationText        : null
+DefaultPublicNatGatewayText : 
+ResourceGroupName           : rg-week1-lab
+Location                    : ukwest
+ResourceGuid                : 78ed6c86-2aeb-4301-8b51-58e64ace95c8
+Type                        : Microsoft.Network/virtualNetworks
+Tag                         : 
+TagsTable                   : 
+Name                        : vnet-week1
+Etag                        : W/"dd58c228-de03-40ca-9361-f9e6bf60c133"
+Id                          : /subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/
+                              providers/Microsoft.Network/virtualNetworks/vnet-week1
+
+
+AddressSpace                : Microsoft.Azure.Commands.Network.Models.PSAddressSpace
+DhcpOptions                 : Microsoft.Azure.Commands.Network.Models.PSDhcpOptions
+FlowTimeoutInMinutes        : 
+Subnets                     : {web-subnet, app-subnet}
+BgpCommunities              : 
+Encryption                  : 
+VirtualNetworkPeerings      : {}
+ProvisioningState           : Succeeded
+EnableDdosProtection        : False
+DdosProtectionPlan          : 
+IpAllocations               : {}
+ExtendedLocation            : 
+PrivateEndpointVNetPolicies : Disabled
+DefaultPublicNatGateway     : 
+AddressSpaceText            : {
+                                "AddressPrefixes": [
+                                  "10.0.0.0/16"
+                                ],
+                                "IpamPoolPrefixAllocations": []
+                              }
+DhcpOptionsText             : {
+                                "DnsServers": []
+                              }
+FlowTimeoutInMinutesText    : null
+SubnetsText                 : [
+                                {
+                                  "Delegations": [],
+                                  "Name": "web-subnet",
+                                  "Etag": "W/\"d5a549d4-f0d7-49df-ba4d-1d04764dbfa4\"",
+                                  "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg
+                              -week1-lab/providers/Microsoft.Network/virtualNetworks/vnet-week1/subnets/web-su
+                              bnet",
+                                  "AddressPrefix": [
+                                    "10.0.1.0/24"
+                                  ],
+                                  "IpamPoolPrefixAllocations": [],
+                                  "IpConfigurations": [],
+                                  "ServiceAssociationLinks": [],
+                                  "ResourceNavigationLinks": [],
+                                  "NetworkSecurityGroup": {
+                                    "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/
+                              rg-week1-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-web"
+                                  },
+                                  "ServiceEndpoints": [],
+                                  "ServiceEndpointPolicies": [],
+                                  "PrivateEndpoints": [],
+                                  "ProvisioningState": "Succeeded",
+                                  "PrivateEndpointNetworkPolicies": "Disabled",
+                                  "PrivateLinkServiceNetworkPolicies": "Enabled",
+                                  "IpAllocations": []
+                                },
+                                {
+                                  "Delegations": [],
+                                  "Name": "app-subnet",
+                                  "Etag": "W/\"d5a549d4-f0d7-49df-ba4d-1d04764dbfa4\"",
+                                  "Id": "/subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg
+                              -week1-lab/providers/Microsoft.Network/virtualNetworks/vnet-week1/subnets/app-su
+                              bnet",
+                                  "AddressPrefix": [
+                                    "10.0.2.0/24"
+                                  ],
+                                  "IpamPoolPrefixAllocations": [],
+                                  "IpConfigurations": [],
+                                  "ServiceAssociationLinks": [],
+                                  "ResourceNavigationLinks": [],
+                                  "ServiceEndpoints": [],
+                                  "ServiceEndpointPolicies": [],
+                                  "PrivateEndpoints": [],
+                                  "ProvisioningState": "Succeeded",
+                                  "PrivateEndpointNetworkPolicies": "Disabled",
+                                  "PrivateLinkServiceNetworkPolicies": "Enabled",
+                                  "IpAllocations": []
+                                }
+                              ]
+BgpCommunitiesText          : null
+EncryptionText              : null
+VirtualNetworkPeeringsText  : []
+EnableDdosProtectionText    : false
+DdosProtectionPlanText      : null
+IpAllocationsText           : []
+ExtendedLocationText        : null
+DefaultPublicNatGatewayText : 
+ResourceGroupName           : rg-week1-lab
+Location                    : ukwest
+ResourceGuid                : 78ed6c86-2aeb-4301-8b51-58e64ace95c8
+Type                        : Microsoft.Network/virtualNetworks
+Tag                         : 
+TagsTable                   : 
+Name                        : vnet-week1
+Etag                        : W/"d5a549d4-f0d7-49df-ba4d-1d04764dbfa4"
+Id                          : /subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/
+                              providers/Microsoft.Network/virtualNetworks/vnet-week1
+
+Deploying web VM...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '01/11/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+
+ResourceGroupName        : rg-week1-lab
+Id                       : /subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/pro
+                           viders/Microsoft.Compute/virtualMachines/vm-web-01
+VmId                     : 7dc7616e-1151-4a7a-9f14-7bcd676e8150
+Name                     : vm-web-01
+Type                     : Microsoft.Compute/virtualMachines
+Location                 : ukwest
+ExtendedLocation         : 
+LicenseType              : 
+Tags                     : {}
+AvailabilitySetReference : 
+DiagnosticsProfile       : 
+Extensions               : {}
+HardwareProfile          : Microsoft.Azure.Management.Compute.Models.HardwareProfile
+InstanceView             : 
+NetworkProfile           : Microsoft.Azure.Management.Compute.Models.NetworkProfile
+SecurityProfile          : Microsoft.Azure.Management.Compute.Models.SecurityProfile
+OsName                   : 
+OsVersion                : 
+HyperVGeneration         : 
+OSProfile                : Microsoft.Azure.Management.Compute.Models.OSProfile
+BillingProfile           : 
+Plan                     : 
+ProvisioningState        : Succeeded
+StorageProfile           : Microsoft.Azure.Management.Compute.Models.StorageProfile
+DisplayHint              : Compact
+Identity                 : 
+Zones                    : 
+FullyQualifiedDomainName : vm-web-01-c2310d.ukwest.cloudapp.azure.com
+AdditionalCapabilities   : 
+ProximityPlacementGroup  : 
+Host                     : 
+VirtualMachineScaleSet   : 
+EvictionPolicy           : 
+Priority                 : 
+HostGroup                : 
+CapacityReservation      : 
+UserData                 : 
+ApplicationProfile       : 
+PlatformFaultDomain      : 
+TimeCreated              : 15/05/2026 19:46:46
+Etag                     : "2"
+Placement                : 
+AddProxyAgentExtension   : 
+RequestId                : 
+StatusCode               : 0
+
+Deploying app VM...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '01/11/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+
+ResourceGroupName        : rg-week1-lab
+Id                       : /subscriptions/d392e015-91b6-4e34-80f4-f811298f4850/resourceGroups/rg-week1-lab/pro
+                           viders/Microsoft.Compute/virtualMachines/vm-app-01
+VmId                     : 605251c8-237b-48c2-ad85-e4170e33b33d
+Name                     : vm-app-01
+Type                     : Microsoft.Compute/virtualMachines
+Location                 : ukwest
+ExtendedLocation         : 
+LicenseType              : 
+Tags                     : {}
+AvailabilitySetReference : 
+DiagnosticsProfile       : 
+Extensions               : {}
+HardwareProfile          : Microsoft.Azure.Management.Compute.Models.HardwareProfile
+InstanceView             : 
+NetworkProfile           : Microsoft.Azure.Management.Compute.Models.NetworkProfile
+SecurityProfile          : Microsoft.Azure.Management.Compute.Models.SecurityProfile
+OsName                   : 
+OsVersion                : 
+HyperVGeneration         : 
+OSProfile                : Microsoft.Azure.Management.Compute.Models.OSProfile
+BillingProfile           : 
+Plan                     : 
+ProvisioningState        : Succeeded
+StorageProfile           : Microsoft.Azure.Management.Compute.Models.StorageProfile
+DisplayHint              : Compact
+Identity                 : 
+Zones                    : 
+FullyQualifiedDomainName : vm-app-01-bb010f.ukwest.cloudapp.azure.com
+AdditionalCapabilities   : 
+ProximityPlacementGroup  : 
+Host                     : 
+VirtualMachineScaleSet   : 
+EvictionPolicy           : 
+Priority                 : 
+HostGroup                : 
+CapacityReservation      : 
+UserData                 : 
+ApplicationProfile       : 
+PlatformFaultDomain      : 
+TimeCreated              : 15/05/2026 19:47:59
+Etag                     : "2"
+Placement                : 
+AddProxyAgentExtension   : 
+RequestId                : 
+StatusCode               : 0
+
+Deployment completed successfully.
+**********************
+PowerShell transcript end
+End time: 20260515204846
+**********************
