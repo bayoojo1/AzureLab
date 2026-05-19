@@ -1,5 +1,5 @@
 $ResourceGroup = "rg-week1-lab"
-$Location = "uksouth"
+$Location = "ukwest"
 
 $VnetName = "vnet-week1"
 $AddressSpace = "10.0.0.0/16"
@@ -16,5 +16,5 @@ $AppVmName = "vm-app-01"
 $WebNsgName = "nsg-web"
 $WebPublicIpName = "pip-web-01"
 
-$VmSize = "Standard_B1s"
+$VmSize = "Standard_B2ats_v2"
 $AdminUsername = "bayoojo1"

@@ -1,0 +1,50 @@
+**********************
+PowerShell transcript start
+Start time: 20260515202928
+Username: DESKTOP-EUTV28M\User
+RunAs User: DESKTOP-EUTV28M\User
+Configuration Name: 
+Machine: DESKTOP-EUTV28M (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\User\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.4.0' -BundledModulesPath 'c:\Users\User\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.4.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\User\AppData\Roaming\Code\logs\20260515T112459\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\User\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-6744-891078.json' -FeatureFlags @() 
+Process ID: 13172
+PSVersion: 7.6.1
+PSEdition: Core
+GitCommitId: 7.6.1
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is ./logs/deploy-20260515-202928.log
+Creating resource group...
+Resource group already exists.
+Creating virtual network and subnets...
+Virtual network already exists.
+Creating NSG and security rules...
+
+ResourceGroupName Name       Location ProvisioningState EnableDdosProtection DefaultPublicNatGateway
+----------------- ----       -------- ----------------- -------------------- -----------------------
+rg-week1-lab      vnet-week1 uksouth  Succeeded         False
+rg-week1-lab      vnet-week1 uksouth  Succeeded         False
+Deploying web VM...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '01/11/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The selected VM size 'Standard_A1_v2' cannot boot Hypervisor Generation '2'. If this was a Create operation please check that the Hypervisor Generation of the Image matches the Hypervisor Generation of the selected VM Size. If this was an Update operation please select a Hypervisor Generation '2' VM Size. For more information, see https://aka.ms/azuregen2vm"
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The selected VM size 'Standard_A1_v2' cannot boot Hypervisor Generation '2'. If this was a Create operation please check that the Hypervisor Generation of the Image matches the Hypervisor Generation of the selected VM Size. If this was an Update operation please select a Hypervisor Generation '2' VM Size. For more information, see https://aka.ms/azuregen2vm"
+>> TerminatingError(deploy.ps1): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The selected VM size 'Standard_A1_v2' cannot boot Hypervisor Generation '2'. If this was a Create operation please check that the Hypervisor Generation of the Image matches the Hypervisor Generation of the selected VM Size. If this was an Update operation please select a Hypervisor Generation '2' VM Size. For more information, see https://aka.ms/azuregen2vm"
+**********************
+PowerShell transcript end
+End time: 20260515202948
+**********************

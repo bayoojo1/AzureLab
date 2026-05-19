@@ -25,9 +25,9 @@ if (-not $nsg) {
         -DestinationPortRange 80
 
     $nsg = Add-AzNetworkSecurityRuleConfig `
-        -Name "Allow-RDP" `
+        -Name "Allow-SSH" `
         -NetworkSecurityGroup $nsg `
-        -Description "Allow RDP" `
+        -Description "Allow SSH" `
         -Access Allow `
         -Protocol Tcp `
         -Direction Inbound `
@@ -35,7 +35,7 @@ if (-not $nsg) {
         -SourceAddressPrefix * `
         -SourcePortRange * `
         -DestinationAddressPrefix * `
-        -DestinationPortRange 3389
+        -DestinationPortRange 22
 
     $nsg | Set-AzNetworkSecurityGroup
 }
