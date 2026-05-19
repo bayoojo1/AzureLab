@@ -1,17 +1,27 @@
 $ErrorActionPreference = 'Stop'
 
 . ./config/variables.ps1
-Get-ChildItem ./modules/*.ps1 | ForEach-Object { . $_.FullName }
 
+# Load all module functions
+Get-ChildItem -Path "./modules/*.ps1" | ForEach-Object {
+    . ($_.FullName)
+}
+
+# Create logs folder if it does not exist
 if (-not (Test-Path './logs')) {
     New-Item -ItemType Directory -Path './logs' | Out-Null
 }
 
+# Start logging
 Start-Transcript -Path "./logs/deploy-$(Get-Date -Format yyyyMMdd-HHmmss).log"
 
 try {
-    $cred = Get-Credential -UserName $Config.AdminUsername -Message 'Enter VM administrator password'
+    # Prompt once for VM credentials
+    $cred = Get-Credential `
+        -UserName $Config.AdminUsername `
+        -Message 'Enter VM administrator password'
 
+    # Deploy resources
     New-ResourceGroup -Config $Config
     New-Networking -Config $Config
     New-Security -Config $Config
@@ -20,7 +30,10 @@ try {
     New-LoadBalancer -Config $Config
     Add-BackendPoolMembers -Config $Config
 
-    Write-Host 'Deployment completed successfully.' -ForegroundColor Green
+    Write-Host "Deployment completed successfully." -ForegroundColor Green
+}
+catch {
+    Write-Error $_
 }
 finally {
     Stop-Transcript
