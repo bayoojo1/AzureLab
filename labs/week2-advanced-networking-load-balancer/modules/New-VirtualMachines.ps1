@@ -1,39 +1,58 @@
 function New-VirtualMachines {
-    param($Config, [pscredential]$Credential)
+    param(
+        [hashtable]$Config,
+        [pscredential]$Credential
+    )
 
-    $allVms = $Config.WebVms + $Config.AppVm
+    $allVms = @()
+    $allVms += $Config.WebVms
+    $allVms += $Config.AppVm
 
     foreach ($vmName in $allVms) {
-        if (Get-AzVM -ResourceGroupName $Config.ResourceGroup -Name $vmName -ErrorAction SilentlyContinue) {
+
+        # Skip if VM already exists
+        if (Get-AzVM -ResourceGroupName $Config.ResourceGroup `
+                     -Name $vmName `
+                     -ErrorAction SilentlyContinue) {
+            Write-Host "$vmName already exists. Skipping..."
             continue
         }
 
-        $subnet = if ($Config.WebVms -contains $vmName) { $Config.WebSubnetName } else { $Config.AppSubnetName }
-        $nsg = if ($Config.WebVms -contains $vmName) { $Config.WebNsgName } else { $null }
-
-        $params = @{
-            ResourceGroupName = $Config.ResourceGroup
-            Location          = $Config.Location
-            Name              = $vmName
-            VirtualNetworkName= $Config.VnetName
-            SubnetName        = $subnet
-            Credential        = $Credential
-            Size              = $Config.VmSize
-            Image             = $Config.Image
-            OpenPorts         = @()
+        # Determine subnet
+        if ($Config.WebVms -contains $vmName) {
+            $subnetName = $Config.WebSubnetName
+        }
+        else {
+            $subnetName = $Config.AppSubnetName
         }
 
-        if ($nsg) { $params.SecurityGroupName = $nsg }
+        Write-Host "Creating VM: $vmName"
 
-        New-AzVM @params | Out-Null
+        New-AzVM `
+            -ResourceGroupName $Config.ResourceGroup `
+            -Location $Config.Location `
+            -Name $vmName `
+            -VirtualNetworkName $Config.VnetName `
+            -SubnetName $subnetName `
+            -Credential $Credential `
+            -Image $Config.Image `
+            -Size $Config.VmSize `
+            -OpenPorts @() `
+            | Out-Null
     }
 
-    # Remove public IP from app VM
+    # Remove public IP from app VM if one was created automatically
+    Write-Host "Ensuring app VM has no public IP..."
+
     $appNic = Get-AzNetworkInterface -ResourceGroupName $Config.ResourceGroup |
-        Where-Object { $_.VirtualMachine.Id -match "/$($Config.AppVm)$" }
+        Where-Object {
+            $_.VirtualMachine -and
+            $_.VirtualMachine.Id -match "/$($Config.AppVm)$"
+        }
 
     if ($appNic -and $appNic.IpConfigurations[0].PublicIpAddress) {
- [OOA       $appNic.IpConfigurations[0].PublicIpAddress = $null
+        $appNic.IpConfigurations[0].PublicIpAddress = $null
         $appNic | Set-AzNetworkInterface | Out-Null
+        Write-Host "Removed public IP from $($Config.AppVm)"
     }
 }
