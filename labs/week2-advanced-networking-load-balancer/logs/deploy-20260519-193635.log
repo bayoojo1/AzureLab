@@ -1,0 +1,47 @@
+**********************
+PowerShell transcript start
+Start time: 20260519193635
+Username: DESKTOP-EUTV28M\User
+RunAs User: DESKTOP-EUTV28M\User
+Configuration Name: 
+Machine: DESKTOP-EUTV28M (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\User\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.4.0' -BundledModulesPath 'c:\Users\User\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.4.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\User\AppData\Roaming\Code\logs\20260519T160224\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\User\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-1212-512716.json' -FeatureFlags @() 
+Process ID: 7284
+PSVersion: 7.6.1
+PSEdition: Core
+GitCommitId: 7.6.1
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\AzureLab\labs\week2-advanced-networking-load-balancer\logs\deploy-20260519-193635.log
+PS>TerminatingError(New-AzNetworkSecurityGroup): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The Resource 'Microsoft.Network/networkSecurityGroups/nsg-web' under resource group 'rg-week2-lab' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+StatusCode: 404
+ReasonPhrase: Not Found
+ErrorCode: ResourceNotFound
+ErrorMessage: The Resource 'Microsoft.Network/networkSecurityGroups/nsg-web' under resource group 'rg-week2-lab' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+OperationID : 7488c1fd-0045-47a6-860f-0ccc409b87ca"
+>> TerminatingError(New-AzNetworkSecurityGroup): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The Resource 'Microsoft.Network/networkSecurityGroups/nsg-web' under resource group 'rg-week2-lab' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+StatusCode: 404
+ReasonPhrase: Not Found
+ErrorCode: ResourceNotFound
+ErrorMessage: The Resource 'Microsoft.Network/networkSecurityGroups/nsg-web' under resource group 'rg-week2-lab' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+OperationID : 7488c1fd-0045-47a6-860f-0ccc409b87ca"
+>> TerminatingError(deploy.ps1): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The Resource 'Microsoft.Network/networkSecurityGroups/nsg-web' under resource group 'rg-week2-lab' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+StatusCode: 404
+ReasonPhrase: Not Found
+ErrorCode: ResourceNotFound
+ErrorMessage: The Resource 'Microsoft.Network/networkSecurityGroups/nsg-web' under resource group 'rg-week2-lab' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+OperationID : 7488c1fd-0045-47a6-860f-0ccc409b87ca"
+**********************
+PowerShell transcript end
+End time: 20260519193708
+**********************

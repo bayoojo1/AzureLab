@@ -1,0 +1,441 @@
+**********************
+PowerShell transcript start
+Start time: 20260519183827
+Username: DESKTOP-EUTV28M\User
+RunAs User: DESKTOP-EUTV28M\User
+Configuration Name: 
+Machine: DESKTOP-EUTV28M (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\User\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.4.0' -BundledModulesPath 'c:\Users\User\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.4.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\User\AppData\Roaming\Code\logs\20260519T160224\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\User\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-1212-512716.json' -FeatureFlags @() 
+Process ID: 7284
+PSVersion: 7.6.1
+PSEdition: Core
+GitCommitId: 7.6.1
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\AzureLab\labs\week2-advanced-networking-load-balancer\logs\deploy-20260519-183827.log
+Attempting to deploy vm-web-01 with size Standard_B1s...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B1s' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B1s: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B1s' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B12ms...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 12, (Minimum) New Limit Required: 12. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:12,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B12ms: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 12, (Minimum) New Limit Required: 12. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:12,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B16als_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 16, (Minimum) New Limit Required: 16. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:16,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B16als_v2: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 16, (Minimum) New Limit Required: 16. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:16,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B16as_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 16, (Minimum) New Limit Required: 16. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:16,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B16as_v2: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 16, (Minimum) New Limit Required: 16. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:16,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B16ls_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 16, (Minimum) New Limit Required: 16. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:16,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B16ls_v2: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 16, (Minimum) New Limit Required: 16. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:16,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B16ms...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 16, (Minimum) New Limit Required: 16. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:16,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B16ms: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 16, (Minimum) New Limit Required: 16. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:16,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B16pls_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot create a VM of size 'Standard_B16pls_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size."
+Failed with size Standard_B16pls_v2: Cannot create a VM of size 'Standard_B16pls_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size.
+Attempting to deploy vm-web-01 with size Standard_B16ps_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot create a VM of size 'Standard_B16ps_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size."
+Failed with size Standard_B16ps_v2: Cannot create a VM of size 'Standard_B16ps_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size.
+Attempting to deploy vm-web-01 with size Standard_B16s_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 16, (Minimum) New Limit Required: 16. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:16,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B16s_v2: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 16, (Minimum) New Limit Required: 16. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:16,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B1ls...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B1ls' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B1ls: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B1ls' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B1ms...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B1ms' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B1ms: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B1ms' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B20ms...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 20, (Minimum) New Limit Required: 20. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:20,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B20ms: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 20, (Minimum) New Limit Required: 20. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:20,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B2als_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2als_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B2als_v2: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2als_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B2as_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2as_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B2as_v2: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2as_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B2ats_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2ats_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B2ats_v2: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2ats_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B2ls_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2ls_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B2ls_v2: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2ls_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B2ms...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2ms' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B2ms: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2ms' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B2pls_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot create a VM of size 'Standard_B2pls_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size."
+Failed with size Standard_B2pls_v2: Cannot create a VM of size 'Standard_B2pls_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size.
+Attempting to deploy vm-web-01 with size Standard_B2ps_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot create a VM of size 'Standard_B2ps_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size."
+Failed with size Standard_B2ps_v2: Cannot create a VM of size 'Standard_B2ps_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size.
+Attempting to deploy vm-web-01 with size Standard_B2pts_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot create a VM of size 'Standard_B2pts_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size."
+Failed with size Standard_B2pts_v2: Cannot create a VM of size 'Standard_B2pts_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size.
+Attempting to deploy vm-web-01 with size Standard_B2s...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2s' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B2s: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2s' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B2s_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2s_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B2s_v2: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2s_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B2ts_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2ts_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B2ts_v2: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2ts_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B32als_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 32, (Minimum) New Limit Required: 32. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:32,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B32als_v2: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 32, (Minimum) New Limit Required: 32. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:32,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B32as_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 32, (Minimum) New Limit Required: 32. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:32,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B32as_v2: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 32, (Minimum) New Limit Required: 32. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:32,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B32ls_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 32, (Minimum) New Limit Required: 32. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:32,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B32ls_v2: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 32, (Minimum) New Limit Required: 32. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:32,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B32s_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 32, (Minimum) New Limit Required: 32. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:32,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B32s_v2: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 32, (Minimum) New Limit Required: 32. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:32,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B4als_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B4als_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B4als_v2: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B4als_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B4as_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B4as_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B4as_v2: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B4as_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B4ls_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B4ls_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B4ls_v2: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B4ls_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B4ms...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B4ms' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B4ms: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B4ms' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B4pls_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot create a VM of size 'Standard_B4pls_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size."
+Failed with size Standard_B4pls_v2: Cannot create a VM of size 'Standard_B4pls_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size.
+Attempting to deploy vm-web-01 with size Standard_B4ps_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot create a VM of size 'Standard_B4ps_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size."
+Failed with size Standard_B4ps_v2: Cannot create a VM of size 'Standard_B4ps_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size.
+Attempting to deploy vm-web-01 with size Standard_B4s_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B4s_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details."
+Failed with size Standard_B4s_v2: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B4s_v2' is currently not available in location 'uksouth'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.
+Attempting to deploy vm-web-01 with size Standard_B8als_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 8, (Minimum) New Limit Required: 8. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:8,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B8als_v2: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 8, (Minimum) New Limit Required: 8. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:8,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B8as_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 8, (Minimum) New Limit Required: 8. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:8,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B8as_v2: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 8, (Minimum) New Limit Required: 8. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:8,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B8ls_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 8, (Minimum) New Limit Required: 8. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:8,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B8ls_v2: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 8, (Minimum) New Limit Required: 8. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:8,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B8ms...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 8, (Minimum) New Limit Required: 8. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:8,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B8ms: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 8, (Minimum) New Limit Required: 8. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:8,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+Attempting to deploy vm-web-01 with size Standard_B8pls_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot create a VM of size 'Standard_B8pls_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size."
+Failed with size Standard_B8pls_v2: Cannot create a VM of size 'Standard_B8pls_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size.
+Attempting to deploy vm-web-01 with size Standard_B8ps_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot create a VM of size 'Standard_B8ps_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size."
+Failed with size Standard_B8ps_v2: Cannot create a VM of size 'Standard_B8ps_v2' because this VM size only supports a CPU Architecture of 'Arm64', but an image or disk with CPU Architecture 'x64' was given. Please check that the CPU Architecture of the image or disk is compatible with that of the VM size.
+Attempting to deploy vm-web-01 with size Standard_B8s_v2...
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 8, (Minimum) New Limit Required: 8. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:8,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+Failed with size Standard_B8s_v2: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: uksouth, Current Limit: 4, Current Usage: 0, Additional Required: 8, (Minimum) New Limit Required: 8. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22uksouth%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:8,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests
+PS>TerminatingError(): "Unable to deploy vm-web-01. All VM sizes failed."
+>> TerminatingError(deploy.ps1): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Unable to deploy vm-web-01. All VM sizes failed."
+**********************
+PowerShell transcript end
+End time: 20260519184057
+**********************

@@ -1,58 +1,53 @@
 function New-VirtualMachines {
-    param(
-        [hashtable]$Config,
-        [pscredential]$Credential
-    )
-
-    $allVms = @()
-    $allVms += $Config.WebVms
-    $allVms += $Config.AppVm
-
+    param([hashtable]$Config, [pscredential]$Credential)
+    
+    $PreferredVmSizes = @('Standard_D2s_v3', 'Standard_D2s_v5', 'Standard_B1ms', 'Standard_B1s')
+    
+    if ($Config.ContainsKey('VmSize') -and $Config.VmSize) {
+        $PreferredVmSizes = @($Config.VmSize) + ($PreferredVmSizes | Where-Object { $_ -ne $Config.VmSize })
+    }
+    
+    $allVms = @() + $Config.WebVms
+    if ($Config.AppVm) { $allVms += $Config.AppVm }
+    
     foreach ($vmName in $allVms) {
-
-        # Skip if VM already exists
-        if (Get-AzVM -ResourceGroupName $Config.ResourceGroup `
-                     -Name $vmName `
-                     -ErrorAction SilentlyContinue) {
-            Write-Host "$vmName already exists. Skipping..."
+        if (Get-AzVM -ResourceGroupName $Config.ResourceGroup -Name $vmName -ErrorAction SilentlyContinue) {
+            Write-Host "$vmName already exists. Skipping..." -ForegroundColor Yellow
             continue
         }
-
-        # Determine subnet
-        if ($Config.WebVms -contains $vmName) {
-            $subnetName = $Config.WebSubnetName
+        
+        $subnetName = if ($Config.WebVms -contains $vmName) { $Config.WebSubnetName } else { $Config.AppSubnetName }
+        $vmCreated = $false
+        
+        foreach ($vmSize in $PreferredVmSizes) {
+            Write-Host "Attempting to deploy $vmName with size $vmSize..." -ForegroundColor Cyan
+            try {
+                New-AzVM -ResourceGroupName $Config.ResourceGroup `
+                    -Location $Config.Location -Name $vmName `
+                    -VirtualNetworkName $Config.VnetName -SubnetName $subnetName `
+                    -Credential $Credential -Image $Config.Image -Size $vmSize `
+                    -PublicIpAddressName "$vmName-pip" -OpenPorts @() | Out-Null
+                
+                Write-Host "$vmName deployed successfully using $vmSize." -ForegroundColor Green
+                $vmCreated = $true
+                break
+            } catch {
+                Write-Host "Failed with size ${vmSize}: $($_.Exception.Message)" -ForegroundColor Yellow
+            }
         }
-        else {
-            $subnetName = $Config.AppSubnetName
+        
+        if (-not $vmCreated) {
+            throw "Unable to deploy $vmName. All VM sizes failed."
         }
-
-        Write-Host "Creating VM: $vmName"
-
-        New-AzVM `
-            -ResourceGroupName $Config.ResourceGroup `
-            -Location $Config.Location `
-            -Name $vmName `
-            -VirtualNetworkName $Config.VnetName `
-            -SubnetName $subnetName `
-            -Credential $Credential `
-            -Image $Config.Image `
-            -Size $Config.VmSize `
-            -OpenPorts @() `
-            | Out-Null
-    }
-
-    # Remove public IP from app VM if one was created automatically
-    Write-Host "Ensuring app VM has no public IP..."
-
-    $appNic = Get-AzNetworkInterface -ResourceGroupName $Config.ResourceGroup |
-        Where-Object {
-            $_.VirtualMachine -and
-            $_.VirtualMachine.Id -match "/$($Config.AppVm)$"
+        
+        # CRITICAL: Remove automatically created NSG from NIC
+        $nic = Get-AzNetworkInterface -ResourceGroupName $Config.ResourceGroup | 
+            Where-Object { $_.VirtualMachine.Id -match $vmName }
+        
+        if ($nic.NetworkSecurityGroup) {
+            $nic.NetworkSecurityGroup = $null
+            $nic | Set-AzNetworkInterface | Out-Null
+            Write-Host "Removed direct NSG from $vmName" -ForegroundColor Yellow
         }
-
-    if ($appNic -and $appNic.IpConfigurations[0].PublicIpAddress) {
-        $appNic.IpConfigurations[0].PublicIpAddress = $null
-        $appNic | Set-AzNetworkInterface | Out-Null
-        Write-Host "Removed public IP from $($Config.AppVm)"
     }
 }

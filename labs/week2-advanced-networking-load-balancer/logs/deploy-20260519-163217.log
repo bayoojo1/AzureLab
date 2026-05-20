@@ -1,0 +1,56 @@
+**********************
+PowerShell transcript start
+Start time: 20260519163217
+Username: DESKTOP-EUTV28M\User
+RunAs User: DESKTOP-EUTV28M\User
+Configuration Name: 
+Machine: DESKTOP-EUTV28M (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\User\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.4.0' -BundledModulesPath 'c:\Users\User\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.4.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\User\AppData\Roaming\Code\logs\20260519T160224\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\User\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-1212-512716.json' -FeatureFlags @() 
+Process ID: 7284
+PSVersion: 7.6.1
+PSEdition: Core
+GitCommitId: 7.6.1
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\AzureLab\labs\week2-advanced-networking-load-balancer\logs\deploy-20260519-163217.log
+Creating VM: vm-web-01
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+Creating VM: vm-web-02
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+Creating VM: vm-app-01
+WARNING: Upcoming breaking changes in the cmdlet 'New-AzVM' :
+The default VM size will change from 'Standard_D2s_v3' to 'Standard_D2s_v5'.
+- This change will take effect on '11/1/2025'
+- The change is expected to take effect in Az version : '15.0.0'
+- The change is expected to take effect in Az.Compute version : '11.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+You can reference https://aka.ms/findImagePS on how to find VM Images using PowerShell.
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: ukwest, Current Limit: 4, Current Usage: 4, Additional Required: 2, (Minimum) New Limit Required: 6. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22ukwest%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:6,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+>> TerminatingError(New-AzVM): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: ukwest, Current Limit: 4, Current Usage: 4, Additional Required: 2, (Minimum) New Limit Required: 6. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22ukwest%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:6,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+>> TerminatingError(deploy.ps1): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Operation could not be completed as it results in exceeding approved Total Regional Cores quota. Additional details - Deployment Model: Resource Manager, Location: ukwest, Current Limit: 4, Current Usage: 4, Additional Required: 2, (Minimum) New Limit Required: 6. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22d392e015-91b6-4e34-80f4-f811298f4850%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22ukwest%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22cores%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:6,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22cores%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/regional-quota-requests"
+**********************
+PowerShell transcript end
+End time: 20260519163440
+**********************
